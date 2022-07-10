@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option go_package = "./";
+
+package zab;
+
+// The boradcast service definition.
+service Zab {
+    // Boradcasts
+    rpc Broadcast (Txn) returns (Ack) {}
+}
+
+// The transaction message
+message Txn {
+    string name = 1;
+}
+
+// The acknowledgement message
+message Ack {
+    string message = 1;
+}
